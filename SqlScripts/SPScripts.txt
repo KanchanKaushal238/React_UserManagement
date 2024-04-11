@@ -1,0 +1,95 @@
+	USE [UserManagement]
+	GO
+	/****** Object:  StoredProcedure [dbo].[InsertUserDetails]    Script Date: 11-04-2024 16:19:32 ******/
+	SET ANSI_NULLS ON
+	GO
+	SET QUOTED_IDENTIFIER ON
+	GO
+	-- =============================================
+	-- Author:		<Author,Kanchan>
+	-- Create date: <Create Date, 09/04/2024>
+	-- Description:	<Description, Inserting User Records in User Details table>
+	-- =============================================
+	ALTER PROCEDURE [dbo].[InsertUserDetails]
+		@UserName VARCHAR(50),
+		@Password VARCHAR(1000),
+		@Email VARCHAR(100),
+		@PhoneNumber VARCHAR(20),
+		@CurrentTechnology VARCHAR(100),
+		@UserRole VARCHAR(200)
+	AS
+	BEGIN
+	
+		BEGIN TRY
+		
+			DECLARE @KEY VARCHAR(50) = 'UserDetailInUserManagement';
+
+			BEGIN TRANSACTION InsertIntoUserDetails
+
+				-- Insert statements for procedure here
+				INSERT INTO [UserDetails]
+					VALUES (@UserName, ENCRYPTBYPASSPHRASE(@KEY, @Password), @Email, @PhoneNumber, @CurrentTechnology, @UserRole);
+
+			
+				SELECT UserId
+				FROM UserDetails WITH(NOLOCK)
+				WHERE EmailAddress = @Email AND CONVERT(VARCHAR(300), DECRYPTBYPASSPHRASE(@Key,Password)) = @Password AND UserName = @UserName;
+
+			COMMIT TRANSACTION InsertIntoUserDetails
+
+		END TRY
+
+		BEGIN CATCH
+			SELECT ERROR_NUMBER() AS ErrorNumber, ERROR_SEVERITY() AS ErrorSeverity, ERROR_STATE() AS ErrorState, ERROR_PROCEDURE() AS ErrorProcedure, 
+					ERROR_LINE() AS ErrorLine, ERROR_MESSAGE() AS ErrorMessage, @Email AS UserEmail;
+			
+			ROLLBACK TRANSACTION
+
+		END CATCH
+	END
+
+
+
+USE [UserManagement]
+GO
+/****** Object:  StoredProcedure [dbo].[GetUserDetails]    Script Date: 11-04-2024 16:19:42 ******/
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+-- =============================================
+-- Author:		<Author,Kanchan>
+-- Create date: <Create Date, 09/04/2024>
+-- Description:	<Description, Get User Records from User Details table>
+-- =============================================
+ALTER PROCEDURE [dbo].[GetUserDetails]
+	@UserName VARCHAR(50),
+	@Password VARCHAR(1000),
+	@Email VARCHAR(100)
+AS
+BEGIN
+	
+	BEGIN TRY
+
+		BEGIN TRANSACTION GetUserDetails
+			
+			DECLARE @KEY VARCHAR(50) = 'UserDetailInUserManagement';
+
+			-- Insert statements for procedure here
+			SELECT UserName, EmailAddress, PhoneNumber, CurrentTechnology, UserRole 
+			FROM UserDetails 
+			WHERE EmailAddress = @Email AND CONVERT(VARCHAR(300), DECRYPTBYPASSPHRASE(@Key,Password)) = @Password AND UserName = @UserName;
+
+		COMMIT TRANSACTION GetUserDetails
+
+	END TRY
+
+	BEGIN CATCH
+		SELECT ERROR_NUMBER() AS ErrorNumber, ERROR_SEVERITY() AS ErrorSeverity, ERROR_STATE() AS ErrorState, ERROR_PROCEDURE() AS ErrorProcedure, 
+				ERROR_LINE() AS ErrorLine, ERROR_MESSAGE() AS ErrorMessage, @Email AS UserEmail;
+			
+		ROLLBACK TRANSACTION
+
+	END CATCH
+END
+

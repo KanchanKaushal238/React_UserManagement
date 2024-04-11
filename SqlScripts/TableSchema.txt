@@ -1,0 +1,84 @@
+USE [UserManagement]
+GO
+
+/****** Object:  Table [dbo].[User_EducationDetails]    Script Date: 11-04-2024 16:17:46 ******/
+SET ANSI_NULLS ON
+GO
+
+SET QUOTED_IDENTIFIER ON
+GO
+
+CREATE TABLE [dbo].[User_EducationDetails](
+	[EducationId] [int] IDENTITY(1,1) NOT NULL,
+	[UserId] [int] NULL,
+	[Qualification] [varchar](10) NULL,
+	[University] [varchar](500) NULL,
+	[Percentage] [varchar](10) NULL,
+	[PassingYear] [varchar](10) NULL,
+	[Stream] [varchar](10) NULL,
+	[Address] [varchar](1000) NULL,
+ CONSTRAINT [PK__User_Edu__4BBE3805F6D23594] PRIMARY KEY CLUSTERED 
+(
+	[EducationId] ASC
+)WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON, OPTIMIZE_FOR_SEQUENTIAL_KEY = OFF) ON [PRIMARY]
+) ON [PRIMARY]
+GO
+
+
+
+
+USE [UserManagement]
+GO
+
+/****** Object:  Table [dbo].[User_WorkExperienceDetails]    Script Date: 11-04-2024 16:18:00 ******/
+SET ANSI_NULLS ON
+GO
+
+SET QUOTED_IDENTIFIER ON
+GO
+
+CREATE TABLE [dbo].[User_WorkExperienceDetails](
+	[WorkExperienceId] [int] IDENTITY(1,1) NOT NULL,
+	[UserId] [int] NULL,
+	[CompanyName] [varchar](200) NULL,
+	[Designation] [varchar](100) NULL,
+	[Duration] [varchar](40) NULL,
+	[Technology] [varchar](100) NULL,
+PRIMARY KEY CLUSTERED 
+(
+	[WorkExperienceId] ASC
+)WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON, OPTIMIZE_FOR_SEQUENTIAL_KEY = OFF) ON [PRIMARY]
+) ON [PRIMARY]
+GO
+
+
+USE [UserManagement]
+GO
+
+/****** Object:  Table [dbo].[UserDetails]    Script Date: 11-04-2024 16:18:41 ******/
+SET ANSI_NULLS ON
+GO
+
+SET QUOTED_IDENTIFIER ON
+GO
+
+CREATE TABLE [dbo].[UserDetails](
+	[UserId] [int] IDENTITY(1,1) NOT NULL,
+	[UserName] [varchar](50) NOT NULL,
+	[Password] [varbinary](200) NOT NULL,
+	[EmailAddress] [varchar](100) NOT NULL,
+	[PhoneNumber] [varchar](50) NULL,
+	[CurrentTechnology] [varchar](100) NULL,
+	[UserRole] [varchar](50) NOT NULL,
+ CONSTRAINT [PK__UserDeta__1788CC4C770B261B] PRIMARY KEY CLUSTERED 
+(
+	[UserId] ASC
+)WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON, OPTIMIZE_FOR_SEQUENTIAL_KEY = OFF) ON [PRIMARY]
+) ON [PRIMARY]
+GO
+
+
+
+
+
+
