@@ -144,7 +144,7 @@ export default function SignupUserDetailsForm()
       <div className={classes.singlerow}>
 
       {phoneFormValue.length > 0 && phoneFormValue.map((element, index) => (
-          <>
+          <Fragment key = {`phone-${element}${index}`}>
           <label htmlFor = {`phone-${index}`}>Phone Number</label>
               <PatternFormat
                 type="tel"
@@ -161,7 +161,7 @@ export default function SignupUserDetailsForm()
                   onClick={() => removePhoneForm(index)}
                 />
               </div>
-          </>
+          </Fragment>
         ))}
 
         <input name="phoneLength" id ="phoneLength" value = {phoneFormValue.length} type = "hidden"></input>

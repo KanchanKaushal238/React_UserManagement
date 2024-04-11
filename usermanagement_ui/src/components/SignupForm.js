@@ -97,7 +97,7 @@ function SignupForm() {
         </div>
 
         {educationFormValue.map((element, index) => (
-            <Fragment key = {`frag-${element}`}>
+            <Fragment key = {`frag-${element}${index}`}>
           <SignupEducationForm key = {`compnent-${element}`} setKey={index} />
           <div className={classes.trash} key = {`trashIcon-${element}`}>
               <FontAwesomeIcon key = {`iconTrash-${element}`} icon={faTrash} onClick={() => removeEducationForm(index)}/>
@@ -105,12 +105,12 @@ function SignupForm() {
             </Fragment>
         ))}
         {weFormValue.length > 0 && weFormValue.map((element, index) => (
-          <>
-            <SignupWorkExperienceForm setKey={index} />
-            <div className={classes.trash}>
-              <FontAwesomeIcon icon={faTrash} onClick={() => removeWeForm(index)}/>
+          <Fragment key = {`frag-${element}${index}`}>
+            <SignupWorkExperienceForm key = {`compnent-${element}${index}`} setKey={index} />
+            <div className={classes.trash} key = {`trashIcon-${element}${index}`}>
+              <FontAwesomeIcon icon={faTrash} onClick={() => removeWeForm(index)} key = {`iconTrash-${element}${index}`}/>
             </div>
-          </>
+          </Fragment>
         ))}
 
         
