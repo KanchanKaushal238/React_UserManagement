@@ -9,11 +9,11 @@ export default SignupPage;
 
 export async function action ({request})
 {
-    debugger;
     const data = await request.formData();
 
     let weNumber = data.get('weLength');
     let eduNumber = data.get('eduLength');
+    let phoneLength = data.get('phoneLength');
 
     let weArr= [];
       if (weNumber > 0) {
@@ -29,6 +29,20 @@ export async function action ({request})
           weArr.push(weObj);
         }
       }
+
+      let phoneArr= [];
+      if (phoneLength > 0) {
+        for (let i = 0; i < phoneLength; i++) {
+          for (const [key, value] of data) {
+            
+            let keyArr = key.split("-")
+            if (keyArr[0] === "phone" && keyArr[1] == i) {
+              phoneArr.push(value);
+            }
+          }
+        }
+      }
+
 
       let eduArr= [];
       if (eduNumber > 0) {
@@ -49,7 +63,7 @@ export async function action ({request})
             UserName : data.get('username'),
             EmailAddress: data.get('email'),
             Password : data.get('password'),
-            PhoneNumber: data.get('phone'),
+            PhoneNumber: phoneArr.toString(),
             CurrentTechnology: data.get('currentTech'),
             UserRole: 'User'
         },

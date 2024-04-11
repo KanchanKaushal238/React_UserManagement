@@ -14,7 +14,7 @@
 		@UserName VARCHAR(50),
 		@Password VARCHAR(1000),
 		@Email VARCHAR(100),
-		@PhoneNumber VARCHAR(20),
+		@PhoneNumber VARCHAR(1000),
 		@CurrentTechnology VARCHAR(100),
 		@UserRole VARCHAR(200)
 	AS

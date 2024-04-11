@@ -67,7 +67,7 @@ CREATE TABLE [dbo].[UserDetails](
 	[UserName] [varchar](50) NOT NULL,
 	[Password] [varbinary](200) NOT NULL,
 	[EmailAddress] [varchar](100) NOT NULL,
-	[PhoneNumber] [varchar](50) NULL,
+	[PhoneNumber] [varchar](1000) NULL,
 	[CurrentTechnology] [varchar](100) NULL,
 	[UserRole] [varchar](50) NOT NULL,
  CONSTRAINT [PK__UserDeta__1788CC4C770B261B] PRIMARY KEY CLUSTERED 
