@@ -1,0 +1,213 @@
+.form {
+    max-width: 50rem;
+    margin: 2rem auto;
+    border: 1px solid white;
+    padding: 4px 8px;
+    border-radius: 2px;
+    box-shadow: 10px 5px 5px whitesmoke;
+  }
+  .form label{
+    margin-top: 4px;
+  }
+
+  .form label,
+  .form input,
+  .form textarea {
+    display: inline;
+    width: 100%;
+  }
+  .form input,
+  .form textarea {
+    font: inherit;
+    padding: 0.25rem;
+  }
+  
+
+  .actions {
+    display: flex;
+    gap: 1rem;
+    justify-content: flex-end;
+    align-items: center;
+  }
+  
+  .actions button {
+    font: inherit;
+    cursor: pointer;
+    padding: 0.5rem 1.5rem;
+    border-radius: 4px;
+    background-color: var(--color-gray-300);
+    color: var(--color-gray-800);
+    border: none;
+  }
+  
+  .actions a {
+    text-decoration: none;
+    background-color: transparent;
+    color: var(--color-gray-300);
+  }
+  
+  .actions button:hover {
+    background-color: var(--color-primary-300);
+  }
+  
+  .actions a:hover {
+    background-color: var(--color-gray-800);
+  }
+  
+.form h1{
+    font-size: 20px;
+    text-align: center;
+}
+
+.form p{
+    font-size: 10px;
+    text-align: center;
+    margin-top: -15px;
+    color: wheat;
+}
+
+.form h2{
+    font-size: 18px;
+    margin-left: 15px;
+}
+
+.form li{
+    margin-top: 10px;
+}
+
+/* .form ul{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+} */
+
+.accordion {
+    max-width: 750px;
+    /* margin: 2rem auto; */
+  }
+  
+  .accordionTitle {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    cursor: pointer;
+    margin-left: 20px;
+  }
+  
+  /* .accordionTitle:hover {
+    background-color: #3ab4cc;
+  }
+   */
+   .accordionContent,  
+   .accordionTitle{
+    padding: 1rem;
+   }
+  .accordionContent{
+    max-width: 740px;
+    justify-content: center;
+  }
+
+  .formrow {
+    display: flex;
+    align-items: center;
+    margin-bottom: 15px;
+  }
+  
+  .formrow label {
+    margin-right: 3px;
+    margin-left: 5px;
+  }
+  
+  .formrow input {
+    width: 200px;
+    padding: 5px;
+  }
+
+  .validationError {
+    color: white;
+    border: 3px solid red;
+    padding: 10px;
+    font-size:small;
+    text-align: center;
+  }
+
+  .singlerow {
+    /* display: flex;
+    align-items: center; */
+    justify-content: center;
+    position: relative;
+    /* flex-wrap: wrap; */
+    margin-bottom: 15px;
+  }
+  .singlerow label {
+    margin-right: 52px;
+    margin-left: 5px;
+  }
+  .singlerow input {
+    width: 200px;
+    padding: 5px;
+  }
+
+
+  .addForm {
+    display: flex;
+    gap: 1rem;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 40px;
+  }
+  
+  .addForm button {
+    font: inherit;
+    cursor: pointer;
+    padding: 0.5rem 1.5rem;
+    border-radius: 4px;
+    /* background-color: var(--color-gray-300); */
+    color: var(--color-gray-800);
+    border: none;
+  }
+  
+  .addForm a {
+    text-decoration: none;
+    background-color: transparent;
+    color: var(--color-gray-300);
+  }
+  
+  .addForm button:hover {
+    background-color: var(--color-primary-300);
+  }
+  
+  .addForm a:hover {
+    background-color: var(--color-gray-800);
+  }
+
+  .trash{
+    display: flex;
+    justify-content: flex-end;
+    margin-right: 50px;
+  }
+
+  .error{
+    color: white;
+    font-size: 20px;
+    background-color: red;
+    text-align: center;
+    margin: 8px;
+    padding: 10px;
+  }
+
+  
+  .success{
+    color: white;
+    font-size: 20px;
+    background-color: green;
+    text-align: center;
+    margin: 8px;
+    padding: 10px;
+  }
+
+  .formrow .datetime{
+    width: 130%;
+  }
+  
+  
