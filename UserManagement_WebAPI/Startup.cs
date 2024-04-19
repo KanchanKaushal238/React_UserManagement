@@ -60,6 +60,7 @@ namespace UserManagement_WebAPI
             services.AddDbContext<AppDbContext>(options => options.UseSqlServer(Configuration.GetConnectionString("DbCon")));
 
             services.AddScoped<IRegistrationService, RegistrationService>();
+            services.AddScoped<ICartService, CartService>();
             services.AddCors(o => o.AddPolicy("MyPolicy", builder =>
             {
                 builder.AllowAnyOrigin()
@@ -79,7 +80,7 @@ namespace UserManagement_WebAPI
                 app.UseDeveloperExceptionPage();
             }
 
-            app.UseHttpsRedirection();
+            //app.UseHttpsRedirection();
 
             app.UseRouting();
             app.UseCors("MyPolicy");
