@@ -1,0 +1,35 @@
+.header{
+    @apply flex justify-between items-center;
+}
+
+.logo{
+    @apply flex items-center justify-center pb-2 pt-1 px-4;
+}
+
+.logo img{
+    @apply ml-20 w-40 h-40 object-contain drop-shadow-2xl;
+}
+
+.title {
+    @apply drop-shadow-2xl font-bold tracking-widest text-3xl;
+}
+
+.cartImage{
+    @apply w-14 h-14 mr-20 mt-[-2px]
+}
+
+.cartP{
+    @apply w-14 text-center text-sm text-white font-bold mt-[-10px]
+}
+
+.nav ul {
+    @apply list-none m-0 p-0 flex gap-6 text-xl
+}
+
+.nav .navButton{
+    @apply border-2 rounded-xl p-2 bg-purple-500 text-pink-200
+}
+
+.stickyHeader{
+        @apply sticky absolute w-full top-0 left-0 z-[1];
+} 

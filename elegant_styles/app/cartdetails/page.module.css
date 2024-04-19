@@ -1,0 +1,36 @@
+.content {
+    @apply min-h-full ml-0 bg-transparent gap-12 mx-5 w-full top-52 max-w-screen-xl z-[1] mb-6;
+}
+
+.content h1{
+    @apply text-center gap-4 text-4xl mt-10 font-jazz tracking-widest bg-gradient-to-r from-indigo-500 via-purple-500 to-pink-500 bg-clip-text text-transparent
+
+}
+
+.content ul {
+    @apply ml-20 mt-10 mr-32
+}
+
+.content .listContent {
+    @apply mt-5 bg-[#7e6ebe] rounded-xl py-4 px-8 flex justify-between;
+}
+
+.content .price
+{
+    @apply text-rose-800 font-bold
+}
+
+.actions{
+    @apply text-xl font-bold
+}
+ .linkAction{
+    @apply hover:text-rose-800 cursor-pointer mx-2
+}
+
+.content .priceItem {
+    @apply text-2xl text-[#7e6ebe] font-bold my-4 text-end mr-32
+}
+
+.noItems{
+    @apply text-center text-rose-800  my-4  font-bold
+}

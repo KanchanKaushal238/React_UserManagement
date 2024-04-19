@@ -1,0 +1,46 @@
+.header{
+    @apply mt-5 ml-0 min-h-full  bg-transparent flex gap-12 mx-0 w-full  max-w-screen-xl top-52 z-[1] ;
+    /* min-h-full  bg-transparent flex gap-12 mx-0 w-full mt-[-120px] max-w-screen-xl top-52 z-[1]; */
+}
+
+.content{
+    @apply text-2xl ml-4;
+}
+
+.content h1{
+    @apply gap-4 text-4xl mt-10 font-jazz text-white
+    /* @apply gap-4 text-4xl mt-10 font-jazz tracking-widest bg-gradient-to-r from-indigo-500 via-purple-500 to-pink-500 bg-clip-text text-transparent */
+    /* text-[#be70ab] */
+    /* text-rose-200; */
+}
+
+.content p{
+    @apply mt-4 text-xl text-white font-serif;
+}
+
+.highlight {
+    @apply text-white bg-gradient-to-r from-indigo-500 via-purple-500 to-pink-500 bg-clip-padding p-2;
+}
+
+.dropdown{
+    @apply ml-2 mt-20 
+}
+/* 
+.dropdown{
+    @apply flex mt-4 py-2 px-4 
+} */
+
+.spinner{
+    @apply text-center my-10 py-2.5 px-5 me-2 text-xl font-medium text-purple-700 focus:z-10 focus:ring-2 focus:ring-blue-700 dark:text-purple-700 items-center
+}
+
+.spinner svg{
+    @apply inline w-4 h-4 me-3 text-gray-200 animate-spin dark:text-gray-600
+}
+
+
+.testTransform
+{
+    @apply capitalize text-indigo-500;
+}
+

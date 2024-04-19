@@ -1,0 +1,15 @@
+.ulDropdown{
+    @apply py-2 text-sm text-gray-700 dark:text-gray-200;
+}
+
+.liDropdown{
+    @apply block px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white uppercase;
+}
+
+.dropdownButton {
+    @apply mt-6 w-64 text-white hover:text-white font-bold bg-purple-700 hover:bg-purple-800 focus:ring-4 focus:outline-none font-medium rounded-lg text-sm px-5 py-2.5 text-center inline-flex items-center dark:bg-purple-700 dark:hover:bg-purple-800 dark:focus:ring-purple-800;
+
+}
+.dropdowndiv{
+    @apply z-10 bg-white divide-y divide-gray-100 rounded-lg shadow w-64 dark:bg-purple-400;
+}

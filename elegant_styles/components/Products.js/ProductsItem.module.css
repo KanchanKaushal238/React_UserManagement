@@ -1,0 +1,110 @@
+.product {
+    @apply mix-blend-multiply flex flex-col justify-between h-full rounded shadow-2xl overflow-hidden transition-all duration-75 ease-in-out
+    text-[#ddd6cb] bg-gradient-to-b from-indigo-500 via-purple-500 to-pink-500;
+
+   
+    /* color: #ddd6cb;
+    background: linear-gradient(90deg, #2c1e19, #25200f); */
+  }
+  
+  .headerText {
+    @apply pt-2 pl-4 pb-0 pr-2;
+  }
+  
+  .headerText h2 {
+    @apply m-0 text-2xl h-16 truncate leading-10;
+    /* font-family: 'Montserrat', sans-serif; */
+  }
+  
+  /* .headerText p {
+    @apply text-xs italic; */
+    /* font-size: 0.75rem;
+    color: #cfa69b;
+    font-style: italic; */
+  /* } */
+  
+  .product h2,
+  .product p {
+    @apply m-0;
+  }
+  
+  .productprice {
+    @apply text-base text-rose-800 m-0 font-bold;
+    /* font-size: 1rem;
+    color: #d1b68b;
+    margin: 0; */
+  }
+
+  .banner{
+    @apply bottom-auto left-auto right-0 top-0 z-10 inline-block rotate-0 skew-x-0 skew-y-0 scale-x-100 scale-y-100 whitespace-nowrap bg-indigo-800 px-2.5 py-1 text-center align-baseline text-xs font-bold leading-none text-white;
+  }
+
+  .image {
+    @apply relative h-60
+    /* position: relative;
+    height: 15rem; */
+  }
+  
+  .product img {
+    @apply object-fill;
+  }
+  
+  .content {
+    @apply flex flex-col justify-between h-full;
+    /* display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    height: 100%; */
+  }
+  
+  .summary {
+    @apply pt-4 pl-4 pb-0 pr-4
+    /* padding: 1rem 1rem 0 1rem; */
+  }
+  
+  .actions {
+    @apply p-4 text-right text-black 
+    /* padding: 1rem;
+    text-align: right; */
+  }
+  
+  .actions a {
+    @apply inline-block mt-4 py-2 px-4 rounded font-bold hover:text-rose-800;
+    /* margin-top: 1rem;
+    padding: 0.5rem 1rem;
+    border-radius: 0.5rem;
+    background: linear-gradient(90deg, #f9572a, #ff9b05);
+    color: #ffffff;
+    font-weight: bold;
+    text-decoration: none; */
+  }
+
+  .actions .addCartButton{
+    @apply inline-block font-bold hover:text-rose-800;
+  }
+  
+  /* .actions a:hover,
+  .actions a:active {
+    background: linear-gradient(90deg, #fd4715, #f9b241);
+    box-shadow: 0 0 12px rgba(242, 100, 18, 0.8);
+  } */
+
+  .stars{
+    @apply flex items-center mt-2.5 mb-5 ml-4;
+  }
+
+  .starsDiv{
+    @apply flex items-center space-x-1 rtl:space-x-reverse;
+  }
+
+  .checkedStars{
+    @apply w-4 h-4 text-yellow-300;
+  }
+
+  .uncheckedStars{
+    @apply w-4 h-4 text-gray-200 dark:text-gray-600;
+  }
+
+  .rate{
+    @apply bg-blue-100 text-blue-800 text-xs font-semibold px-2.5 py-0.5 rounded dark:bg-blue-200 dark:text-blue-800 ms-3
+  }
