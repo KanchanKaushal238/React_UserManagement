@@ -39,7 +39,7 @@ namespace UserManagement_WebAPI.Services
 
                         if (updateresult == 0)
                         {
-                            return RegistrationMapper.MapResponse(Convert.ToInt32(HttpStatusCode.BadRequest), "Cart not updated");
+                            return RegistrationMapper.MapResponse(Convert.ToInt32(HttpStatusCode.BadRequest), "Cart not updated, please try again later!");
                         }
                         return RegistrationMapper.MapResponse(Convert.ToInt32(HttpStatusCode.OK), "Cart updated Successfully");
                     }
@@ -51,9 +51,9 @@ namespace UserManagement_WebAPI.Services
 
                         int result = await _context.SaveChangesAsync();
 
-                        if (result > 0)
+                        if (result == 0)
                         {
-                            return RegistrationMapper.MapResponse(Convert.ToInt32(HttpStatusCode.BadRequest), "Cart not added");
+                            return RegistrationMapper.MapResponse(Convert.ToInt32(HttpStatusCode.BadRequest), "Product not added, please try again later!");
                         }
 
                         return RegistrationMapper.MapResponse(Convert.ToInt32(HttpStatusCode.OK), "Product added in cart Successfully");
@@ -93,9 +93,9 @@ namespace UserManagement_WebAPI.Services
                             int updateresult = await _context.SaveChangesAsync();
                             if (updateresult == 0)
                             {
-                                return RegistrationMapper.MapResponse(Convert.ToInt32(HttpStatusCode.BadRequest), "Cart not updated");
+                                return RegistrationMapper.MapResponse(Convert.ToInt32(HttpStatusCode.BadRequest), "Product not deleted, please try again later!");
                             }
-                            return RegistrationMapper.MapResponse(Convert.ToInt32(HttpStatusCode.OK), "Cart updated Successfully");
+                            return RegistrationMapper.MapResponse(Convert.ToInt32(HttpStatusCode.OK), "Product removed from cart Successfully");
                         }
                         else
                         {
@@ -105,10 +105,10 @@ namespace UserManagement_WebAPI.Services
 
                             if (result == 0)
                             {
-                                return RegistrationMapper.MapResponse(Convert.ToInt32(HttpStatusCode.BadRequest), "Cart not deleted");
+                                return RegistrationMapper.MapResponse(Convert.ToInt32(HttpStatusCode.BadRequest), "Product not deleted, please try again later!");
                             }
 
-                            return RegistrationMapper.MapResponse(Convert.ToInt32(HttpStatusCode.OK), "Cart deleted Successfully");
+                            return RegistrationMapper.MapResponse(Convert.ToInt32(HttpStatusCode.OK), "Product removed from cart Successfully");
                         }
                     }
                     else

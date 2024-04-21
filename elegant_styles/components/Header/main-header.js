@@ -25,12 +25,12 @@ export default async  function MainHeader() {
 
           <nav className={classes.nav}>
             <ul>
-               <li>
-                <button type = "button" className={classes.navButton}>
+               {/* <li>
+                <button type = "button" className={classes.navButton}> */}
                   {/* <DropdownCategories categories= {categories}/> */}
-                  <Link href = "/products/">Browse Products</Link>
-                </button>
-              </li> 
+                  {/* <Link href = "/products/">Browse Products</Link>
+                </button> */}
+              {/* </li>  */}
               <li>
                 <Link href = "/cartdetails">
                   <p className={classes.cartP}>{totalCartItems.length}</p>

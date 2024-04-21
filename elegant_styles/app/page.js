@@ -6,7 +6,8 @@ import {
 import Image from "next/image";
 import classes from "./page.module.css";
 import DropdownCategories from "@/components/CategoryDropdown/DropdownCategories";
-import ProductImages from "@/components/ProductImages.js/ProductImages";
+import ProductImages from "@/components/ProductImages/ProductImages";
+
 
 export default async function Home() {
   const categories = await GetDistinctCategories();

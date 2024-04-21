@@ -1,7 +1,7 @@
 import { GetAllProducts, GetDistinctCategories } from "@/lib/products";
 import classes from "./page.module.css";
 import { Suspense } from "react";
-import ProductGrid from "@/components/Products.js/ProductGrid";
+import ProductGrid from "@/components/Products/ProductGrid";
 import DropdownCategories from "@/components/CategoryDropdown/DropdownCategories";
 
 
